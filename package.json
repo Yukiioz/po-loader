@@ -5,12 +5,9 @@
     "name": "David Schissler @dschissler"
   },
   "description": "PO loader module for webpack",
-  "peerDependencies": {
-    "po2json": ">=0.4.5"
-  },
   "repository": {
     "type": "git",
-    "url": "git@github.com:perchlabs/po-loader.git"
+    "url": "git@github.com:Yukiioz/po-loader.git"
   },
   "licenses": [
     {
@@ -21,9 +18,10 @@
   "readme": "",
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/perchlabs/po-loader/issues"
+    "url": "https://github.com/Yukiioz/po-loader/issues"
   },
   "dependencies": {
-    "loader-utils": "^1.2.3"
+    "loader-utils": "^1.2.3",
+    "po2json": ">=0.4.5"
   }
 }
