@@ -15,5 +15,9 @@ module.exports = function(source) {
         options.stringify = true;
     }
 
+    if (!('format' in options)) {
+        options.format = 'mf';
+    }
+
     return po2json.parse(source, options);
 }
