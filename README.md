@@ -6,18 +6,18 @@
 
 ``` javascript
 // Use it explicitly
-var messages = require("json!po!./locale/en_US/LC_MESSAGES/messages.po");
+var messages = require("po!./locale/en_US/LC_MESSAGES/messages.po");
 
 // Or add a loader into your webpack.config.js
 loaders: [
-   {test: /\.po$/, loader: 'json!po'}
+   {test: /\.po$/, loader: 'po-loader'}
 ]
 
 // And then require it like this
 var messages = require("./locale/en_US/LC_MESSAGES/messages.po");
 ```
 
-See [po2json](https://github.com/mikeedwards/po2json) for a list of possible options. Use the `format` option to change the output format, e.g. `json!po?format=jed` or `json!po?format=jed1.x` for the latest Jed format.
+See [po2json](https://github.com/mikeedwards/po2json) for a list of possible options. Use the `format` option to change the output format, e.g. `po?format=jed` or `po?format=jed1.x` for the latest Jed format.
 
 ### Simple async simple example:
 

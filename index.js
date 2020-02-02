@@ -1,12 +1,8 @@
-/*
-    MIT License http://www.opensource.org/licenses/mit-license.php
-    Author David Schissler @dschissler
-*/
-let po2json = require('po2json');
-let utils = require('loader-utils');
+const po2json = require('po2json');
+const utils = require('loader-utils');
 
 module.exports = function(source) {
-    this.cacheable();
+    if (this.cacheable) this.cacheable();
 
     const options = utils.getOptions(this) || {};
 
@@ -22,5 +18,8 @@ module.exports = function(source) {
         }
     });
 
-    return json;
+    return 'module.exports = ' +
+        JSON.stringify(json)
+            .replace(/\u2028/g, '\\u2028')
+            .replace(/\u2029/g, '\\u2029');
 }
