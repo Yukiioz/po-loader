@@ -10,14 +10,17 @@ module.exports = function(source) {
 
     const options = utils.getOptions(this) || {};
 
-    // default option
-    if (!('stringify' in options)) {
-        options.stringify = true;
-    }
-
     if (!('format' in options)) {
         options.format = 'mf';
     }
 
-    return po2json.parse(source, options);
+    const json = po2json.parse(source, options);
+
+    Object.keys(json).forEach((key) => {
+        if (json[key] === "") {
+            json[key] = key;
+        }
+    });
+
+    return json;
 }
