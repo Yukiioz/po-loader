@@ -12,11 +12,11 @@ module.exports = function(source) {
 
     const json = po2json.parse(source, options);
 
-    Object.keys(json).forEach((key) => {
-        if (json[key] === "") {
+    for (const key in json) {
+        if (!json[key]) {
             json[key] = key;
         }
-    });
+    }
 
     return 'module.exports = ' +
         JSON.stringify(json)
